@@ -17,24 +17,24 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 
     <link rel="stylesheet" type="text/css" href="smartTooltip.css">
-    <script src="smartTooltip.js?t=s<?php echo rand();?>"></script>
+    <script src="smartTooltip.js?t=s<?php echo rand(); ?>"></script>
 
 </head>
 <body style="background:teal;">
 <br><br><br><br><br><br><br><br><br><br><br>
 <div style="text-align:center;">
 
-    <div style="display:inline-block;" class="smart-x smart-aa"
+    <div style="display:inline-block;" class="smart-x smart-a"
          title="smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip ">
         Smart Tooltip
     </div>
 
-    <div style="display:inline-block;" class="smart-x smart-a"
+    <div style="display:inline-block;" class="smart-x smart-b"
          title="smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip smart a tip ">
         Smart Tooltip Static @init
     </div>
 
-    <div style="display:inline-block;" class="smart-x smart-b"
+    <div style="display:inline-block;" class="smart-x smart-c"
          data-tooltip-content="#ttcd">
         Smart Tooltip Static @later param
     </div>
@@ -47,7 +47,7 @@
             smart a tip smart a tip smart a tip</p>
     </div>
 
-    <div style="display:inline-block;" class="smart-x smart-с"
+    <div style="display:inline-block;" class="smart-x smart-d"
 
     >
         Smart Tooltip AJAX
@@ -55,26 +55,25 @@
 
 </div>
 <script>
-    $(document).ready(function() {
-        $('.smart-aa').smartTooltip();
+  $(document).ready(function() {
+    $('.smart-a').smartTooltip();
 
-        $('.smart-a').smartTooltip({static: true});
+    $('.smart-b').smartTooltip({static: true});
 
-        $('.smart-b').smartTooltip();
-        $('.smart-b').smartTooltip('params', {static: true});
+    $('.smart-c').smartTooltip();
+    $('.smart-c').smartTooltip('params', {static: true});
 
-        $('.smart-с').smartTooltip();
-        $('.smart-с').smartTooltip('params', {
-            content: 'loading',
-            open: function(dom) {
-                //new content (external ajax data for e.g)
-                setTimeout(function() {
-                    dom.smartTooltip('content', 'external content');
-                }, 500);
-            },
-        });
-
+    $('.smart-d').smartTooltip();
+    $('.smart-d').smartTooltip('params', {
+      content: 'loading',
+      open: function(dom) {
+        //new content (external ajax data for e.g)
+        setTimeout(function() {
+          dom.smartTooltip('content', 'external content');
+        }, 500);
+      },
     });
+  });
 </script>
 </body>
 </html>
